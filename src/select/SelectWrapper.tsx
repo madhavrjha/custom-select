@@ -24,7 +24,6 @@ const CustomSelect = ({ options, values, onChange }: CustomSelectProps) => {
 	})
 
 	const containerRef = useRef<HTMLDivElement>(null)
-	const ulRef = useRef<HTMLUListElement>(null)
 
 	const listedOptions = unselectedOptions.filter(op => op.name.toLowerCase().includes(searchText.toLowerCase()))
 
@@ -83,11 +82,6 @@ const CustomSelect = ({ options, values, onChange }: CustomSelectProps) => {
 						} else if (newValue >= listedOptions.length) {
 							setHighlightedIndex(listedOptions.length - 1)
 						}
-					}
-
-					// scroll feature
-					if (ulRef.current) {
-						ulRef.current.querySelectorAll('li')[highlightedIndex].focus()
 					}
 					break
 				case 'Escape':
@@ -170,10 +164,9 @@ const CustomSelect = ({ options, values, onChange }: CustomSelectProps) => {
 					}}
 				/>
 			</div>
-			<ul className={`${styles.listWrapper} ${isOpen ? styles.show : ''}`} ref={ulRef}>
+			<ul className={`${styles.listWrapper} ${isOpen ? styles.show : ''}`}>
 				{listedOptions.map((option, index) => (
 					<li
-						tabIndex={1}
 						key={option.id}
 						className={`${styles.listItem} ${highlightedIndex === index ? styles.highlighted : ''}`}
 						onClick={e => {
