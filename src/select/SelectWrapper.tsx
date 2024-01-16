@@ -95,6 +95,7 @@ const CustomSelect = ({ options, values, onChange }: CustomSelectProps) => {
 						} else if (chipFocusStatus === 'idle') {
 							setChipFocusStatus('focused')
 						} else if (chipFocusStatus === 'focused') {
+							setChipFocusStatus('idle')
 							removeSelectedValue(values[values.length - 1])
 						}
 					}
