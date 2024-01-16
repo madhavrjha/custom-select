@@ -1,0 +1,130 @@
+.container {
+	border-bottom: 3px solid #2158e6;
+	position: relative;
+	background: #f4f4f4;
+	padding: 10px;
+	outline: none;
+}
+
+.selectBox {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.chipsWrapper {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.chip {
+	background-color: #caced4;
+	padding-right: 10px;
+	font-size: 0.8rem;
+	border: 2px solid #b6b3b3;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	line-height: 1;
+	font-weight: 500;
+	user-select: none;
+	overflow: hidden;
+}
+
+.chipAvatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.chip.highlighted {
+	border: 2px solid #2158e6;
+}
+
+.chip > .closeBtn {
+	border: none;
+	height: 1rem;
+	width: 1rem;
+	scale: 1.1;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chip > .closeBtn:hover {
+	background-color: #ff6a6a;
+	color: #fff;
+}
+
+.chip > .closeBtn:active {
+	background-color: #ff0000;
+	color: #fff;
+}
+
+.searchInput {
+	max-width: 130px;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	font-size: 1rem;
+}
+
+.listWrapper {
+	display: none;
+	list-style-type: none;
+	position: absolute;
+	z-index: 100;
+	top: calc(100% + 10px);
+	left: 0;
+	background: #fff !important;
+	width: 100%;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	border: 1px solid #2158e6;
+	border-radius: 4px;
+	overflow-y: auto;
+	max-height: 200px;
+}
+
+.listWrapper.show {
+	display: block;
+}
+
+.listItem {
+	padding: 4px 7px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	outline: none;
+}
+
+.listItem.highlighted {
+	background-color: rgba(0 0 0 / 0.1);
+}
+
+.listItem > h2 {
+	flex-basis: 130px;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #222;
+}
+
+.listItem > p {
+	font-size: 0.95rem;
+	color: #555;
+}
+
+.listItem > img {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
